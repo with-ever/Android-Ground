@@ -37,6 +37,7 @@ class TToolBar @JvmOverloads constructor(context: Context, attrs: AttributeSet? 
             // default style
             1 -> {
                 imgTToolbarBack.gone()
+                textTToolbarTitle.text = "Blind"
             }
             // back button style
             2 -> {

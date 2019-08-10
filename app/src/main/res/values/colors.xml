@@ -16,10 +16,10 @@
     <color name="white">#FFFFFF</color>
 
     <!--key color-->
-    <color name="key_color">#5653fc</color>
+    <color name="key_color">#EDB857</color>
 
     <!--gray-->
-    <color name="gray">@color/color_777777</color>
+    <color name="gray">@color/color_878787</color>
     <color name="gray_middle">@color/color_b2b2b2</color>
     <color name="gray_light">@color/color_f8f8f8</color>
     <color name="gray_dark">@color/color_333333</color>
@@ -28,7 +28,7 @@
     <color name="divider">#ABABAB</color>
 
     <!--color-->
-    <color name="color_777777">#777777</color>
+    <color name="color_878787">#878787</color>
     <color name="color_b2b2b2">#b2b2b2</color>
     <color name="color_f8f8f8">#f8f8f8</color>
     <color name="color_333333">#333333</color>

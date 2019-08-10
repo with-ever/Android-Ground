@@ -4,8 +4,8 @@
     <declare-styleable name="TToolBar">
         <attr name="toolbar_title" format="string"/>
         <attr name="toolbar_style" format="enum">
-            <enum name="default_style" value="1"/>
-            <enum name="back_style" value="2"/>
+            <enum name="main" value="1"/>
+            <enum name="back" value="2"/>
         </attr>
     </declare-styleable>
 
