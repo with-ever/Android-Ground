@@ -9,7 +9,7 @@ class MainBookmarkFragment : BaseFragment() {
     /**----------------------------------------------------
      * Life Cycle
      *----------------------------------------------------*/
-    override fun getLayoutId() = R.layout.fragment_main_my
+    override fun getLayoutId() = R.layout.fragment_main_bookmark
     override fun createView(viewGroup: ViewGroup?) {
     }
 
