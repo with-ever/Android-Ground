@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="TToolBar">
+        <attr name="toolbar_title" format="string"/>
+        <attr name="toolbar_style" format="enum">
+            <enum name="default_style" value="1"/>
+            <enum name="back_style" value="2"/>
+        </attr>
+    </declare-styleable>
+
+</resources>

@@ -3,4 +3,34 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <!--black-->
+    <color name="black">#000000</color>
+    <color name="black_70">#B3000000</color>
+    <color name="black_80">#CC000000</color>
+    <color name="black_50">#80000000</color>
+    <color name="black_30">#4D000000</color>
+    <color name="black_90">#E6000000</color>
+
+    <!--white-->
+    <color name="white">#FFFFFF</color>
+
+    <!--key color-->
+    <color name="key_color">#5653fc</color>
+
+    <!--gray-->
+    <color name="gray">@color/color_777777</color>
+    <color name="gray_middle">@color/color_b2b2b2</color>
+    <color name="gray_light">@color/color_f8f8f8</color>
+    <color name="gray_dark">@color/color_333333</color>
+
+    <!--common-->
+    <color name="divider">#ABABAB</color>
+
+    <!--color-->
+    <color name="color_777777">#777777</color>
+    <color name="color_b2b2b2">#b2b2b2</color>
+    <color name="color_f8f8f8">#f8f8f8</color>
+    <color name="color_333333">#333333</color>
+
 </resources>
