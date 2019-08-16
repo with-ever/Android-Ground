@@ -12,8 +12,8 @@ import kotlinx.android.synthetic.main.layout_ttoolbar.view.*
 class TToolBar @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) :
     ConstraintLayout(context, attrs, defStyleAttr) {
 
-    var toolbarTitle: String? = ""
-    var toolbarStyle: Int? = 2
+    private var toolbarTitle: String? = ""
+    private var toolbarStyle: Int? = 2
     private var actionBackButton: (() -> Unit)? = null
 
     init {

@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!--Toolbar-->
     <declare-styleable name="TToolBar">
         <attr name="toolbar_title" format="string"/>
         <attr name="toolbar_style" format="enum">
             <enum name="main" value="1"/>
             <enum name="back" value="2"/>
+        </attr>
+    </declare-styleable>
+
+    <!--ImageView-->
+    <declare-styleable name="TImageView">
+        <attr name="crop" format="enum">
+            <enum name="fit_center" value="1"/>
+            <enum name="center_crop" value="2"/>
+        </attr>
+        <attr name="style" format="enum">
+            <enum name="rectangle" value="1"/>
+            <enum name="square" value="2"/>
+            <enum name="profile" value="3"/>
         </attr>
     </declare-styleable>
 
