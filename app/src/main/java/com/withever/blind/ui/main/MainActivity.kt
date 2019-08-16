@@ -49,7 +49,6 @@ class MainActivity : BaseActivity() {
     }
 
     override fun initData() {
-
     }
 
 
