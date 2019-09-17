@@ -18,11 +18,11 @@
             app:layout_constraintRight_toRightOf="parent"
             android:layout_height="wrap_content" android:id="@+id/asdasd"/>
 
-    <com.withever.blind.ui.common.CommonPostingCell
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/asdasd" android:id="@+id/ddddddddd"/>
+<!--    <com.withever.blind.ui.common.CommonPostingCell-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/asdasd" android:id="@+id/ddddddddd"/>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

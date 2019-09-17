@@ -18,7 +18,7 @@ import com.withever.blind.utils.SystemUtils.getDeviceDpi
 
 class TImageView (context: Context, attrs: AttributeSet): AppCompatImageView(context, attrs) {
 
-    private var crop: Crop = Crop.FIT_CENTER
+    private var crop: Crop = Crop.CENTER_CROP
     private var style: Style = Style.RECTANGLE
 
     init {
