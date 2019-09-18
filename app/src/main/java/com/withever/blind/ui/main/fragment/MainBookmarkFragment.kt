@@ -1,8 +1,14 @@
 package com.withever.blind.ui.main.fragment
 
+import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.withever.blind.R
 import com.withever.blind.base.BaseFragment
+import kotlinx.android.synthetic.main.fragment_main_bookmark.*
 
 class MainBookmarkFragment : BaseFragment() {
 
@@ -30,6 +36,11 @@ class MainBookmarkFragment : BaseFragment() {
 //            override fun failed() {}
 //        })
 //        textTemp.setString("테스트")
+
+        bookmarkRecyclerView.adapter = BookMarkRecyclerviewAdapter()
+        bookmarkRecyclerView.layoutManager = LinearLayoutManager(activity) as RecyclerView.LayoutManager?
+        var decoration = DividerItemDecoration(bookmarkRecyclerView.context, 1)
+        bookmarkRecyclerView.addItemDecoration(decoration)
     }
 
     override fun initData() {
@@ -41,5 +52,26 @@ class MainBookmarkFragment : BaseFragment() {
      *----------------------------------------------------*/
     companion object {
         fun newInstance() = MainBookmarkFragment()
+    }
+
+    class BookMarkRecyclerviewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+            var view = LayoutInflater.from(parent.context).inflate(R.layout.row_board_cell, parent, false)
+
+            return CustomViewHolder(view)
+        }
+
+        class CustomViewHolder(view: View) : RecyclerView.ViewHolder(view){
+
+        }
+
+        override fun getItemCount(): Int {
+            return 14
+        }
+
+        override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+
+        }
+
     }
 }

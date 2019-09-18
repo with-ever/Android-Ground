@@ -2,74 +2,75 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                                    xmlns:app="http://schemas.android.com/apk/res-auto"
                                                    xmlns:tools="http://schemas.android.com/tools"
-                                                   android:orientation="vertical"
+                                                   android:id="@+id/constraintRowBoardCellParent"
                                                    android:layout_width="match_parent"
-                                                   android:layout_height="match_parent"
-                                                   android:id="@+id/constraintRowBoardCellParent">
+                                                   android:layout_height="wrap_content"
+                                                   android:orientation="vertical">
         <TextView
-                android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/textBoardCellTitle"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginStart="10dp" android:layout_marginTop="5dp"/>
-        <TextView
-                android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textBoardCellCompany"
-                app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="10dp"
-                app:layout_constraintTop_toBottomOf="@+id/textBoardCellTitle"
-                android:layout_marginTop="5dp"/>
+                android:layout_marginTop="5dp"
+                android:text="스타트업 이직"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+        <TextView
+                android:id="@+id/textBoardCellCompany"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="회사명"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textBoardCellTitle"/>
 
         <TextView
-                android:text="TextView"
+                android:id="@+id/textBoardCellNickName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textBoardCellNickName"
-                app:layout_constraintTop_toBottomOf="@id/textBoardCellTitle"
-                app:layout_constraintStart_toEndOf="@id/textBoardCellCompany"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginStart="8dp"/>
+                android:text="닉네임"
+                app:layout_constraintStart_toEndOf="@id/textBoardCellCompany"
+                app:layout_constraintTop_toBottomOf="@id/textBoardCellTitle"/>
 
         <ImageView
+                android:id="@+id/imageView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/imageView2"
-                app:srcCompat="@mipmap/ic_launcher"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@mipmap/ic_launcher"
                 tools:visibility="visible"/>
         <TextView
-                android:text="TextViewasdasdasdasdasdasdasdaskdhjajksdhjkashdjka'ajsdhakjshdajkshdjkashdkjas'"
+                android:id="@+id/textBoardCellContens"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/textBoardCellContens"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="10dp"
+                android:text="아는 지인이 스타트업으로 오퍼가 왔다는데, 처음 가는거라 연봉땜에 갈지말지 고민..."
                 app:layout_constraintEnd_toStartOf="@id/imageView2"
-                app:layout_constraintTop_toBottomOf="@id/textBoardCellCompany"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="10dp" android:layout_marginEnd="10dp"/>
-        <TextView
-                android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textBoardCellWatchCount"
-                app:layout_constraintTop_toBottomOf="@+id/textBoardCellContens"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="10dp"/>
+                app:layout_constraintTop_toBottomOf="@id/textBoardCellCompany"/>
         <TextView
-                android:text="TextView"
+                android:id="@+id/textBoardCellWatchCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textBoardCellCreateTime"
-                app:layout_constraintStart_toEndOf="@+id/textBoardCellWatchCount"
-                app:layout_constraintTop_toBottomOf="@id/textBoardCellContens"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginStart="10dp"/>
+                android:text="1010"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textBoardCellContens"/>
+        <TextView
+                android:id="@+id/textBoardCellCreateTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:text="3시간"
+                app:layout_constraintStart_toEndOf="@+id/textBoardCellWatchCount"
+                app:layout_constraintTop_toBottomOf="@id/textBoardCellContens"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
