@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.withever.blind.R
 import com.withever.blind.base.BaseFragment
+import com.withever.blind.ui.Adapter.PostListRecyclerviewAdapter
 import kotlinx.android.synthetic.main.fragment_main_home.*
 
 class MainHomeFragment : BaseFragment() {
@@ -16,6 +17,7 @@ class MainHomeFragment : BaseFragment() {
      * Life Cycle
      *----------------------------------------------------*/
     override fun getLayoutId() = R.layout.fragment_main_home
+
     override fun createView(viewGroup: ViewGroup?) {
     }
 
@@ -30,8 +32,9 @@ class MainHomeFragment : BaseFragment() {
     }
 
     override fun initLayout() {
-        homeRecyclerView.adapter = HomeRecyclerviewAdapter()
-        homeRecyclerView.layoutManager = LinearLayoutManager(activity) as RecyclerView.LayoutManager?
+        homeRecyclerView.adapter = PostListRecyclerviewAdapter()
+        homeRecyclerView.layoutManager =
+            LinearLayoutManager(activity) as RecyclerView.LayoutManager?
         var decoration = DividerItemDecoration(homeRecyclerView.context, 1)
         homeRecyclerView.addItemDecoration(decoration)
     }
@@ -45,26 +48,5 @@ class MainHomeFragment : BaseFragment() {
      *----------------------------------------------------*/
     companion object {
         fun newInstance() = MainHomeFragment()
-    }
-
-    class HomeRecyclerviewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-            var view = LayoutInflater.from(parent.context).inflate(R.layout.row_board_cell, parent, false)
-
-            return CustomViewHolder(view)
-        }
-
-        class CustomViewHolder(view: View) : RecyclerView.ViewHolder(view){
-
-        }
-
-        override fun getItemCount(): Int {
-            return 10
-        }
-
-        override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-
-        }
-
     }
 }

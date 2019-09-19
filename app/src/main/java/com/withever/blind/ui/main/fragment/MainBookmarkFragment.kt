@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.withever.blind.R
 import com.withever.blind.base.BaseFragment
+import com.withever.blind.ui.Adapter.PostListRecyclerviewAdapter
 import kotlinx.android.synthetic.main.fragment_main_bookmark.*
 
 class MainBookmarkFragment : BaseFragment() {
@@ -37,7 +38,7 @@ class MainBookmarkFragment : BaseFragment() {
 //        })
 //        textTemp.setString("테스트")
 
-        bookmarkRecyclerView.adapter = BookMarkRecyclerviewAdapter()
+        bookmarkRecyclerView.adapter = PostListRecyclerviewAdapter()
         bookmarkRecyclerView.layoutManager = LinearLayoutManager(activity) as RecyclerView.LayoutManager?
         var decoration = DividerItemDecoration(bookmarkRecyclerView.context, 1)
         bookmarkRecyclerView.addItemDecoration(decoration)
@@ -54,24 +55,5 @@ class MainBookmarkFragment : BaseFragment() {
         fun newInstance() = MainBookmarkFragment()
     }
 
-    class BookMarkRecyclerviewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-            var view = LayoutInflater.from(parent.context).inflate(R.layout.row_board_cell, parent, false)
 
-            return CustomViewHolder(view)
-        }
-
-        class CustomViewHolder(view: View) : RecyclerView.ViewHolder(view){
-
-        }
-
-        override fun getItemCount(): Int {
-            return 14
-        }
-
-        override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-
-        }
-
-    }
 }
