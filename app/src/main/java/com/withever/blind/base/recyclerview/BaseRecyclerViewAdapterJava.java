@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public abstract class BaseRecyclerViewAdapter extends RecyclerView.Adapter<BaseViewHolder> {
+public abstract class BaseRecyclerViewAdapterJava extends RecyclerView.Adapter<BaseViewHolderJava> {
 
     private static final int TYPE_LOADING_FOOTER = 9999;
     private static final String ITEM_LOAD_MORE = "LoadMore";
@@ -23,14 +23,14 @@ public abstract class BaseRecyclerViewAdapter extends RecyclerView.Adapter<BaseV
 
     private OnRecyclerViewItemListener onRecyclerViewItemListener;
 
-    public abstract BaseViewHolder onAbstractCreateViewHolder(ViewGroup parent, int viewType);
+    public abstract BaseViewHolderJava onAbstractCreateViewHolder(ViewGroup parent, int viewType);
 
     @NotNull
     @Override
-    public BaseViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
+    public BaseViewHolderJava onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
         if (baseLoading && dataRemains && viewType == TYPE_LOADING_FOOTER) {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_recycler_footer_loading, parent, false);
-            return new BaseViewHolder<Void>(view) {
+            return new BaseViewHolderJava<Void>(view) {
                 @Override
                 public void onBindView(Void aVoid) {}
                 @Override
@@ -42,7 +42,7 @@ public abstract class BaseRecyclerViewAdapter extends RecyclerView.Adapter<BaseV
 
 
     @Override
-    public void onBindViewHolder(@NonNull BaseViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull BaseViewHolderJava holder, int position) {
         if (getItemViewType(position) != TYPE_LOADING_FOOTER) {
             if (getItem(position) != null) {
                 holder.onBindView(getItem(position));

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-public abstract class BaseViewHolder<ITEM> extends RecyclerView.ViewHolder {
+public abstract class BaseViewHolderJava<ITEM> extends RecyclerView.ViewHolder {
 
     protected Context context;
     private int viewType;
@@ -34,7 +34,7 @@ public abstract class BaseViewHolder<ITEM> extends RecyclerView.ViewHolder {
         this.onRecyclerViewItemListener = onRecyclerViewItemListener;
     }
 
-    public BaseViewHolder(View view) {
+    public BaseViewHolderJava(View view) {
         super(view);
 
         context = view.getContext();

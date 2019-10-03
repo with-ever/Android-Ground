@@ -7,7 +7,7 @@ import com.withever.blind.R
 
 class EmptyViewHolder(view: View) : BaseViewHolder<Any>(view) {
 
-    override fun onBindView(item: Any) {}
+    override fun onBindView(item: Any?) {}
     override fun onInitView() {}
 
     companion object {
