@@ -1,20 +1,8 @@
 package com.withever.blind.ui.ViewHolder
 
 import android.view.View
-import com.withever.blind.base.recyclerview.BaseViewHolder
-import com.withever.blind.data.PostingSimpleData
-import com.withever.blind.databinding.RowBoardCellBinding
+import androidx.recyclerview.widget.RecyclerView
 
-class PostListRecyclerViewHolder(view: View, binding: RowBoardCellBinding?) : BaseViewHolder<PostingSimpleData>(view){
+class PostListRecyclerViewHolder(view: View) : RecyclerView.ViewHolder(view){
 
-    val binding: RowBoardCellBinding? = binding
-
-    override fun onBindView(item: PostingSimpleData?) {
-        binding?.postingSimple = item
-        binding?.titleTest = "asdasd"
-    }
-
-    override fun onInitView() {
-
-    }
 }

@@ -1,13 +1,13 @@
 package com.withever.blind.ui.main.fragment
 
+import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.withever.blind.R
 import com.withever.blind.base.BaseFragment
-import com.withever.blind.base.recyclerview.Item
-import com.withever.blind.data.PostingSimpleData
 import com.withever.blind.ui.Adapter.PostListRecyclerviewAdapter
 import kotlinx.android.synthetic.main.fragment_main_home.*
 
@@ -40,15 +40,6 @@ class MainHomeFragment : BaseFragment() {
     }
 
     override fun initData() {
-        val itemList = ArrayList<Item<PostingSimpleData>>()
-        val adapter = homeRecyclerView.adapter as PostListRecyclerviewAdapter
-
-        for(i in 1..15 step 1){
-            val data: PostingSimpleData = PostingSimpleData(""+i, ""+(i+1), ""+(i+2), ""+(i+3),""+(i+4), i+5, i+6, i+7, i+8, i+9)
-            var item : Item<PostingSimpleData> = Item<PostingSimpleData>(1, data)
-
-            adapter.addItem(item)
-        }
     }
 
 
