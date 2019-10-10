@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.withever.blind.R
 
-open abstract class BaseRecyclerViewAdapter : RecyclerView.Adapter<BaseViewHolder<*>>(){
+abstract class BaseRecyclerViewAdapter : RecyclerView.Adapter<BaseViewHolder<*>>(){
 
     private val itemList = ArrayList<Item<*>>()
     private var dataRemains:Boolean = true

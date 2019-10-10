@@ -39,7 +39,7 @@ class MainBookmarkFragment : BaseFragment() {
 //        textTemp.setString("테스트")
 
         bookmarkRecyclerView.adapter = PostListRecyclerviewAdapter()
-        bookmarkRecyclerView.layoutManager = LinearLayoutManager(activity) as RecyclerView.LayoutManager?
+        bookmarkRecyclerView.layoutManager = LinearLayoutManager(activity)
         var decoration = DividerItemDecoration(bookmarkRecyclerView.context, 1)
         bookmarkRecyclerView.addItemDecoration(decoration)
     }

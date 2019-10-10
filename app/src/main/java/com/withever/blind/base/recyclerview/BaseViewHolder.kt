@@ -4,7 +4,7 @@ import android.content.Context
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
-open abstract class BaseViewHolder<ITEM>(view: View) : RecyclerView.ViewHolder(view){
+abstract class BaseViewHolder<ITEM>(view: View) : RecyclerView.ViewHolder(view){
 
     protected  var context: Context
     private var viewType: Int = 0
