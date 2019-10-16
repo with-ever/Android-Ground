@@ -1,11 +1,8 @@
-package com.withever.blind.ui.ViewHolder
+package com.withever.blind.ui.viewholder
 
 import android.util.Log
-import android.view.View
-import androidx.recyclerview.widget.RecyclerView
 import com.withever.blind.base.recyclerview.BaseViewHolder
 import com.withever.blind.databinding.RowBoardCellBinding
-import com.withever.blind.extension.isLogDebug
 import com.withever.blind.ui.data.PostingSimpleData
 
 class PostListRecyclerViewHolder(binding: RowBoardCellBinding) : BaseViewHolder<PostingSimpleData>(binding.root){

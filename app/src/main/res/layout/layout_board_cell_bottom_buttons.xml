@@ -1,33 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
-                                                   android:layout_width="match_parent"
-                                                   android:layout_height="wrap_content"
-                                                   android:id="@+id/constraintBoardCellBottomBottonsParent">
+<layout xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ToggleButton
-            android:text="ToggleButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/toggleButton2" android:layout_weight="1"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="@dimen/text_10"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"/>
-    <Button
-            android:text="Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/button" android:layout_weight="1"
-            app:layout_constraintStart_toEndOf="@id/toggleButton2" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-    <Button
-            android:text="Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/button2" android:layout_weight="1"
-            android:layout_marginStart="@dimen/text_10" app:layout_constraintStart_toEndOf="@id/button"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"/>
-    <ToggleButton
-            android:text="ToggleButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/toggleButton" android:layout_weight="1"
-            android:layout_marginStart="@dimen/text_10" app:layout_constraintStart_toEndOf="@+id/button2"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <data>
+        <variable
+                name="postingAttributeData"
+                type="com.withever.blind.ui.data.PostingAttributeData" />
+    </data>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:orientation="horizontal"
+            android:baselineAligned="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintBoardCellBottomBottonsParent"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="2"
+                android:background="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="@+id/textCommentsCount"
+                app:layout_constraintStart_toEndOf="@+id/textCommentsCount">
+
+            <com.withever.blind.widget.TImageView
+                    android:id="@+id/imageThumbsUp"
+                    android:layout_width="26dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/textThumbsUpCount"
+                    app:layout_constraintHorizontal_bias="0.1"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/temp_like_selected"/>
+
+            <com.withever.blind.widget.TTextView
+                    android:id="@+id/textThumbsUpCount"
+                    android:layout_width="38dp"
+                    android:layout_height="wrap_content"
+                    android:text='@{String.valueOf(postingAttributeData.likeCount)}'
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    tools:text="206"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/imageSection01"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toEndOf="@id/imageThumbsUp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            <com.withever.blind.widget.TImageView
+                    android:id="@+id/imageSection01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageComment"
+                    app:layout_constraintStart_toEndOf="@+id/textThumbsUpCount"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@android:drawable/dark_header" />
+
+            <com.withever.blind.widget.TImageView
+                    android:id="@+id/imageComment"
+                    android:layout_width="26dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textCommentsCount"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toEndOf="@id/imageSection01"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/temp_comment" />
+
+            <com.withever.blind.widget.TTextView
+                    android:id="@+id/textCommentsCount"
+                    android:layout_width="38dp"
+                    android:layout_height="wrap_content"
+                    android:text='@{String.valueOf(postingAttributeData.commentCount)}'
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    tools:text="550"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/imageSection02"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toEndOf="@+id/imageComment"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            <com.withever.blind.widget.TImageView
+                    android:id="@+id/imageSection02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageShared"
+                    app:layout_constraintStart_toEndOf="@+id/textCommentsCount"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@android:drawable/dark_header" />
+
+            <com.withever.blind.widget.TImageView
+                    android:id="@+id/imageShared"
+                    android:layout_width="26dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/textSharedCount"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toEndOf="@id/imageSection02"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/temp_share" />
+
+            <com.withever.blind.widget.TTextView
+                    android:id="@+id/textSharedCount"
+                    android:layout_width="38dp"
+                    android:layout_height="wrap_content"
+                    android:text='@{String.valueOf(postingAttributeData.sharedCount)}'
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    tools:text="200"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toEndOf="@id/imageShared"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="1dp"
+                android:layout_weight="9"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+            <com.withever.blind.widget.TImageView
+                    android:id="@+id/imageBookmark"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/temp_bookmark_selected" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

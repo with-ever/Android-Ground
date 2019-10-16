@@ -7,7 +7,9 @@ data class PostingSimpleData(val title: String,
                              val contents: String,
                              val viewCount: Int,
                              val writeTime: Int,
-                             val likeCount: Int,
-                             val commentCount: Int,
-                             val sharedCount: Int){
-}
+                             val postingAttrData: PostingAttributeData)
+
+data class PostingAttributeData(val likeCount: Int,
+                                val commentCount: Int,
+                                val sharedCount: Int,
+                                val isBookmark: Boolean)

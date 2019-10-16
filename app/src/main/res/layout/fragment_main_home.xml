@@ -18,18 +18,18 @@
             android:layout_height="match_parent"
             android:background="#E0E0E0">
 
-        <ImageView
+        <com.withever.blind.widget.TImageView
                 android:id="@+id/imageView4"
                 android:layout_width="0dp"
                 android:layout_height="120dp"
-                android:contentDescription="이미지를 표시할 수 없습니다."
                 android:scaleType="fitXY"
                 app:layout_constraintBottom_toTopOf="@+id/relativeborder"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/temp_main_banner"
-                tools:srcCompat="@drawable/temp_main_banner" />
+                tools:srcCompat="@drawable/temp_main_banner"
+                tools:ignore="contentDescription"/>
 
         <RelativeLayout
                 android:id="@+id/relativeborder"
@@ -42,25 +42,27 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/imageView4">
 
-            <TextView
+            <com.withever.blind.widget.TTextView
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="19dp"
-                    android:text="인기순 정렬"
+                    android:text="@string/home_sort_popular"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
-            <ImageView
+            <com.withever.blind.widget.TImageView
                     android:id="@+id/imageView6"
                     android:layout_width="26dp"
                     android:layout_height="26dp"
-                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:layout_marginEnd="20dp"
-                    app:srcCompat="@drawable/temp_main_filter" />
+                    app:srcCompat="@drawable/temp_main_filter"
+                    tools:ignore="contentDescription"/>
+
         </RelativeLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -72,8 +74,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/relativeborder"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:item='@{simplePostindDataList'/>
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
         <!--    <com.withever.blind.ui.common.CommonPostingCell-->
         <!--            android:layout_width="match_parent"-->
