@@ -7,6 +7,9 @@
                 <variable
                         name="simplePostingData"
                         type="com.withever.blind.ui.data.PostingSimpleData" />
+                <variable
+                        name="postingListViewHolder"
+                        type="com.withever.blind.ui.viewholder.PostListRecyclerViewHolder" />
         </data>
 
         <LinearLayout
@@ -20,7 +23,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="140dp"
                         android:background="#FFFFFF"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:clickable="true"
+                        android:onClick="@{() -> postingListViewHolder.onClickPostingListCell(simplePostingData)}">
 
                         <com.withever.blind.widget.TTextView
                                 android:id="@+id/textBoardCellTitle"
@@ -94,10 +99,10 @@
                                 android:layout_marginStart="10dp"
                                 android:layout_marginTop="8dp"
                                 android:layout_marginEnd="10dp"
-                                android:text="@{simplePostingData.contents}"
-                                tools:text="아는 지인이 스타으업으로 오퍼가 왔다는데, 처음 가는거라 연봉땜에 갈지말지 고민\n처음 가는거라 연봉땜에 갈지말지 고민"
+                                app:textWithMaximumLine='@{simplePostingData.contents}'
                                 app:text_more="@string/home_more_view_text"
                                 app:collapseLine="1"
+                                app:color_text_more="@color/gray_dark"
                                 app:layout_constraintEnd_toStartOf="@id/imageView2"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@id/textBoardCellCompany" />

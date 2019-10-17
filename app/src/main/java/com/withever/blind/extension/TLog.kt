@@ -5,7 +5,7 @@ import android.content.Context
 import android.util.Log
 import java.util.logging.Logger
 
-var isLogDebug = false
+var isLogDebug = true
 var TLOG_TAG = "TLOG_TAG"
 
 
