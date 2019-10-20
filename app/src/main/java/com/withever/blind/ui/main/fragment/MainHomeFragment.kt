@@ -6,10 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DividerItemDecoration
+import com.jay.widget.StickyHeadersLinearLayoutManager
 import com.withever.blind.R
 import com.withever.blind.base.BaseFragment
 import com.withever.blind.base.recyclerview.Item
 import com.withever.blind.databinding.FragmentMainHomeBinding
+import com.withever.blind.ui.adapter.CategoryPagerAdapter
 import com.withever.blind.ui.adapter.PostListRecyclerviewAdapter
 import com.withever.blind.ui.data.PostingAttributeData
 import com.withever.blind.ui.data.PostingSimpleData
@@ -48,8 +50,17 @@ class MainHomeFragment : BaseFragment() {
 
     override fun initLayout() {
         binding?.homeRecyclerView?.adapter = PostListRecyclerviewAdapter()
+        binding?.homeRecyclerView?.layoutManager = StickyHeadersLinearLayoutManager<PostListRecyclerviewAdapter>(context)
         var decoration = DividerItemDecoration(binding?.homeRecyclerView?.context, 1)
         binding?.homeRecyclerView?.addItemDecoration(decoration)
+
+        val margin = 160 * resources.displayMetrics.density.toInt()
+
+        binding?.pagerCategory?.clipToPadding = false
+        binding?.pagerCategory?.setPadding(margin, 0, margin, 0)
+        binding?.pagerCategory?.pageMargin = 40
+        binding?.pagerCategory?.adapter = CategoryPagerAdapter(binding?.root!!.context)
+
     }
 
     override fun initData() {
