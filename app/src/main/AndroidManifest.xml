@@ -24,10 +24,6 @@
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
         <activity
-                android:name=".ScrollingActivity"
-                android:label="@string/title_activity_scrolling"
-                android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity
                 android:name=".ui.posting.PostingActivity"
                 android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".ui.main.MainActivity">

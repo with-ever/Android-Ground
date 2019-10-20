@@ -3,7 +3,6 @@ package com.withever.blind.base.recyclerview
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.withever.blind.R
 
@@ -83,6 +82,7 @@ abstract class BaseRecyclerViewAdapter : RecyclerView.Adapter<BaseViewHolder<*>>
     fun setDataRemains(mDataRemains: Boolean) { this.dataRemains = mDataRemains }
 
     fun <ITEM> getItem(position: Int): ITEM? { return itemList[position].item as ITEM }
+    fun getAllItem(): ArrayList<Item<*>> { return itemList }
 
     fun addItem(item: Item<*>) { this.itemList.add(item) }
     fun addItem(position: Int, item: Item<*>) { this.itemList.add(position, item) }

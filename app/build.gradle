@@ -55,4 +55,5 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
 
     kapt "com.android.databinding:compiler:$android_plugin_version"
+    implementation 'com.github.qiujayen:sticky-layoutmanager:1.0.1'
 }

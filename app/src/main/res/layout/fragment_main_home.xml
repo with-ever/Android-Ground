@@ -21,7 +21,8 @@
         <androidx.viewpager.widget.ViewPager
                 android:id="@+id/pagerCategory"
                 android:layout_width="0dp"
-                android:layout_height="80dp"
+                android:layout_height="0dp"
+                android:foregroundGravity="center"
                 app:layout_constraintBottom_toTopOf="@id/imageBanner"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -82,8 +83,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/layoutSorting"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                app:layout_constraintTop_toBottomOf="@id/layoutSorting"/>
 
         <!--    <com.withever.blind.ui.common.CommonPostingCell-->
         <!--            android:layout_width="match_parent"-->
