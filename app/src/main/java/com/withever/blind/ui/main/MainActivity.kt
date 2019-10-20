@@ -44,6 +44,8 @@ class MainActivity : BaseActivity() {
                 switchFragment(mainNavigation)
             }
         }
+        bottomNavigation.setItemIconTintList(null);
+
         // 처음 화면 설정
         switchFragment(MainNavigation.HOME)
     }
