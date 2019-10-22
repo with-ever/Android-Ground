@@ -33,4 +33,8 @@
     <color name="color_f8f8f8">#f8f8f8</color>
     <color name="color_333333">#333333</color>
 
+    <!--TabColor-->
+    <color name="color_tab_selected">#f5ad42</color>
+    <color name="color_tab_unselected">@color/white</color>
+
 </resources>

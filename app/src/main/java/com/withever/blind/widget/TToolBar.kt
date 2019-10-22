@@ -15,6 +15,7 @@ class TToolBar @JvmOverloads constructor(context: Context, attrs: AttributeSet? 
     private var toolbarTitle: String? = ""
     private var toolbarStyle: Int? = 2
     private var actionBackButton: (() -> Unit)? = null
+    private var actionNoticeButton: (() -> Unit)? = null
 
     init {
         View.inflate(context, R.layout.layout_ttoolbar, this)
@@ -33,21 +34,39 @@ class TToolBar @JvmOverloads constructor(context: Context, attrs: AttributeSet? 
             actionBackButton?.invoke()
         }
 
+        imgNotice.setOnClickListener{
+            actionNoticeButton?.invoke()
+        }
+
         when (toolbarStyle) {
             // default style
             1 -> {
                 imgTToolbarBack.gone()
+                imgNotice.gone()
                 textTToolbarTitle.text = "Blind"
             }
             // back button style
             2 -> {
                 imgTToolbarBack.visible()
+                textTToolbarTitle.text = "Blind"
+                imgNotice.gone()
+            }
+
+            3 ->{
+                imgTToolbarBack.visible()
+                imgNotice.visible()
+
+                textTToolbarTitle.text = "Blind"
             }
         }
     }
 
     fun addBackButtonAction(action: () -> Unit) {
         actionBackButton = action
+    }
+
+    fun addNoticeButtonAction(action: () -> Unit){
+        actionNoticeButton = action
     }
 
     fun setToolBarTitle(title: String) {

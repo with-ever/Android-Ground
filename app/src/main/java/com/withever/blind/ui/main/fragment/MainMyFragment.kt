@@ -1,10 +1,11 @@
 package com.withever.blind.ui.main.fragment
 
 import android.view.ViewGroup
+import androidx.databinding.ViewDataBinding
 import com.withever.blind.R
 import com.withever.blind.base.BaseFragment
 
-class MainMyFragment : BaseFragment() {
+class MainMyFragment : BaseFragment<ViewDataBinding>() {
 
     /**----------------------------------------------------
      * Life Cycle

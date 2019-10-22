@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.withever.blind.R
 import com.withever.blind.base.BaseActivity
+import com.withever.blind.databinding.ActivityMainBinding
+import com.withever.blind.extension.start
 import com.withever.blind.extension.view.active
 import com.withever.blind.extension.view.attach
 import com.withever.blind.extension.view.detach
@@ -11,9 +13,10 @@ import com.withever.blind.ui.main.navigation.MainNavigation
 import com.withever.blind.ui.main.navigation.createFragment
 import com.withever.blind.ui.main.navigation.findNavigationPositionById
 import com.withever.blind.ui.main.navigation.getTag
+import com.withever.blind.ui.notice.NoticeActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : BaseActivity() {
+class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     private var mainNavigation: MainNavigation = MainNavigation.HOME
 
@@ -45,6 +48,10 @@ class MainActivity : BaseActivity() {
             }
         }
         bottomNavigation.setItemIconTintList(null);
+
+        toolbar.addNoticeButtonAction {
+            start<NoticeActivity>()
+        }
 
         // 처음 화면 설정
         switchFragment(MainNavigation.HOME)

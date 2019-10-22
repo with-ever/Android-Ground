@@ -7,6 +7,7 @@
         <attr name="toolbar_style" format="enum">
             <enum name="main" value="1"/>
             <enum name="back" value="2"/>
+            <enum name="notification" value="3"/>
         </attr>
     </declare-styleable>
 
