@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+        <data>
+                <variable
+                        name="simplePostingData"
+                        type="com.withever.blind.ui.data.PostingSimpleData" />
+
+                <variable
+                        name="noticeListViewHolder"
+                        type="com.withever.blind.ui.viewholder.NoticeListRecyclerViewHolder" />
+
+        </data>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintRowBoardCellParent"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/ic_rounded_layout"
+                android:clickable="true"
+                android:onClick="@{() -> noticeListViewHolder.onClickPostingListCell(simplePostingData)}"
+                android:orientation="vertical">
+
+                <com.withever.blind.widget.TTextView
+                        android:id="@+id/textBoardCellTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="12dp"
+                        android:text="@{simplePostingData.title}"
+                        android:textColor="#000000"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="스타트업 이직" />
+
+                <com.withever.blind.widget.TTextView
+                        android:id="@+id/textBoardCellCompany"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="12dp"
+                        android:text="@{simplePostingData.companyName}"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@id/imageSection01"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textBoardCellTitle"
+                        tools:text="회사명" />
+
+                <com.withever.blind.widget.TImageView
+                        android:id="@+id/imageSection01"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintEnd_toStartOf="@+id/textBoardCellNickName"
+                        app:layout_constraintStart_toEndOf="@id/textBoardCellCompany"
+                        app:layout_constraintTop_toBottomOf="@+id/textBoardCellTitle"
+                        app:srcCompat="@android:drawable/dark_header" />
+
+                <com.withever.blind.widget.TTextView
+                        android:id="@+id/textBoardCellNickName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:text="@{simplePostingData.userNickName}"
+                        android:textColor="#FF9800"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/imageSection01"
+                        app:layout_constraintTop_toBottomOf="@id/textBoardCellTitle"
+                        tools:text="닉네임" />
+
+                <com.withever.blind.widget.TTextView
+                        android:id="@+id/textBoardCellContens"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="120dp"
+                        android:layout_marginBottom="16dp"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textBoardCellCompany"
+                        app:text='@{simplePostingData.contents}'
+                        tools:text="아는 지인이 스타트업으로 오퍼가 왔다는데, 처음 가는거라 연봉땜에 갈지 말지 고민중 이라고 하네요" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

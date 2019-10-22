@@ -24,4 +24,10 @@
     <string name="lounge_ted">테드</string>
     <string name="lounge_henry">헨리</string>
 
+    <!--Notice Activity-->
+    <string name="notice_title">NOTICE</string>
+    <string name="notice_description">Check for new notifications.</string>
+    <string name="notice_tab_my_post">My posts</string>
+    <string name="notice_tab_other_post">Other posts</string>
+
 </resources>

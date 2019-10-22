@@ -6,6 +6,7 @@ import com.withever.blind.R
 import com.withever.blind.base.BaseActivity
 import com.withever.blind.databinding.ActivityPostingBinding
 import com.withever.blind.ui.data.PostingSimpleData
+import kotlinx.android.synthetic.main.activity_main.*
 
 class PostingActivity : BaseActivity<ActivityPostingBinding>() {
 
@@ -33,6 +34,10 @@ class PostingActivity : BaseActivity<ActivityPostingBinding>() {
     override fun initLayout() {
         var categoryAdapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getPostingCategoryList())
         binding?.spinnerCategory?.adapter = categoryAdapter
+
+        toolbar.addBackButtonAction {
+            finish()
+        }
     }
 
     override fun initData() {
