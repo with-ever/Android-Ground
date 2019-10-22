@@ -4,6 +4,8 @@ import android.content.Context
 import android.os.Bundle
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 import com.withever.blind.R
 import com.withever.blind.extension.hideSoftKeyboard
 import com.withever.blind.utils.language.LanguageHelper
@@ -12,7 +14,9 @@ import com.withever.blind.utils.language.getLocalLanguage
 import com.withever.blind.utils.language.getLocale
 
 
-abstract class BaseActivity: AppCompatActivity() {
+abstract class BaseActivity<T : ViewDataBinding>: AppCompatActivity() {
+
+    var binding: T? = null
 
     @LayoutRes
     abstract fun getLayoutId(): Int
@@ -28,7 +32,8 @@ abstract class BaseActivity: AppCompatActivity() {
         if (!localLang.isNullOrEmpty()) {
             changeLanguage(baseContext, getLocale(localLang))
         }
-        setContentView(getLayoutId())
+
+        binding = DataBindingUtil.setContentView(this, getLayoutId())
     }
 
     override fun onResume() {

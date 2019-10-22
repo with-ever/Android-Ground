@@ -1,6 +1,7 @@
 package com.withever.blind.ui.main.fragment
 
 import android.view.ViewGroup
+import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.withever.blind.R
@@ -8,7 +9,7 @@ import com.withever.blind.base.BaseFragment
 import com.withever.blind.ui.adapter.PostListRecyclerviewAdapter
 import kotlinx.android.synthetic.main.fragment_main_bookmark.*
 
-class MainBookmarkFragment : BaseFragment() {
+class MainBookmarkFragment : BaseFragment<ViewDataBinding>() {
 
     /**----------------------------------------------------
      * Life Cycle

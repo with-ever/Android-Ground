@@ -2,15 +2,13 @@ package com.withever.blind.ui.posting
 
 import android.os.Bundle
 import android.widget.ArrayAdapter
-import androidx.databinding.DataBindingUtil
 import com.withever.blind.R
 import com.withever.blind.base.BaseActivity
 import com.withever.blind.databinding.ActivityPostingBinding
 import com.withever.blind.ui.data.PostingSimpleData
 
-class PostingActivity : BaseActivity() {
+class PostingActivity : BaseActivity<ActivityPostingBinding>() {
 
-    var binding: ActivityPostingBinding? = null
     var postingData: PostingSimpleData? = null
 
     /**----------------------------------------------------
@@ -33,8 +31,6 @@ class PostingActivity : BaseActivity() {
      * Initialize
      *----------------------------------------------------*/
     override fun initLayout() {
-        binding = DataBindingUtil.setContentView(this, getLayoutId())
-
         var categoryAdapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getPostingCategoryList())
         binding?.spinnerCategory?.adapter = categoryAdapter
     }

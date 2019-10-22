@@ -1,10 +1,6 @@
 package com.withever.blind.ui.main.fragment
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.jay.widget.StickyHeadersLinearLayoutManager
 import com.withever.blind.R
@@ -17,23 +13,12 @@ import com.withever.blind.ui.data.PostingAttributeData
 import com.withever.blind.ui.data.PostingSimpleData
 import kotlinx.android.synthetic.main.fragment_main_home.*
 
-class MainHomeFragment : BaseFragment() {
+class MainHomeFragment : BaseFragment<FragmentMainHomeBinding>() {
 
     /**----------------------------------------------------
      * Life Cycle
      *----------------------------------------------------*/
     override fun getLayoutId() = R.layout.fragment_main_home
-
-    var binding: FragmentMainHomeBinding? = null
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-
-        binding  = DataBindingUtil.inflate(inflater, getLayoutId(), container, false)
-
-        initLayout()
-
-        return binding!!.root
-    }
 
     override fun createView(viewGroup: ViewGroup?) {
     }
