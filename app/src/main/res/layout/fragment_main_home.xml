@@ -22,24 +22,46 @@
                 android:id="@+id/pagerCategory"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:background="#FFFFFF"
                 android:foregroundGravity="center"
+                app:layout_constraintBottom_toTopOf="@id/pagerCategoryDot"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+        </androidx.viewpager.widget.ViewPager>
+
+        <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                android:id="@+id/pagerCategoryDot"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:paddingBottom="14dp"
+                app:dotsColor="@color/color_tab_selected"
+                app:dotsCornerRadius="8dp"
+                app:dotsSize="6dp"
+                app:dotsSpacing="2dp"
+                app:dotsWidthFactor="2.5"
                 app:layout_constraintBottom_toTopOf="@id/imageBanner"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/pagerCategory"/>
 
         <com.withever.blind.widget.TImageView
                 android:id="@+id/imageBanner"
-                android:layout_width="0dp"
-                android:layout_height="120dp"
+                android:layout_width="fill_parent"
+                android:layout_height="110dp"
+                android:layout_marginTop="4dp"
                 android:scaleType="fitXY"
                 app:layout_constraintBottom_toTopOf="@+id/layoutSorting"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/pagerCategory"
+                app:layout_constraintTop_toBottomOf="@id/pagerCategoryDot"
                 app:srcCompat="@drawable/temp_main_banner"
-                tools:srcCompat="@drawable/temp_main_banner"
-                tools:ignore="contentDescription"/>
+                tools:ignore="contentDescription"
+                tools:srcCompat="@drawable/temp_main_banner" />
 
         <RelativeLayout
                 android:id="@+id/layoutSorting"
@@ -54,24 +76,25 @@
 
             <com.withever.blind.widget.TTextView
                     android:id="@+id/textSorting"
+                    style="@style/TextSmall.Bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="19dp"
                     android:text="@string/home_sort_popular"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
 
             <com.withever.blind.widget.TImageView
                     android:id="@+id/imgSorting"
-                    android:layout_width="26dp"
-                    android:layout_height="26dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:layout_marginEnd="20dp"
-                    app:srcCompat="@drawable/temp_main_filter"
-                    tools:ignore="contentDescription"/>
+                    app:srcCompat="@drawable/ic_filter"
+                    tools:ignore="contentDescription" />
 
         </RelativeLayout>
 

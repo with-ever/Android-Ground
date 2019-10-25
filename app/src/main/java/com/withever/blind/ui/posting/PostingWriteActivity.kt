@@ -4,18 +4,18 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import com.withever.blind.R
 import com.withever.blind.base.BaseActivity
-import com.withever.blind.databinding.ActivityPostingBinding
+import com.withever.blind.databinding.ActivityPostingWriteBinding
 import com.withever.blind.ui.data.PostingSimpleData
 import kotlinx.android.synthetic.main.activity_main.*
 
-class PostingActivity : BaseActivity<ActivityPostingBinding>() {
+class PostingWriteActivity : BaseActivity<ActivityPostingWriteBinding>() {
 
     var postingData: PostingSimpleData? = null
 
     /**----------------------------------------------------
      * Life Cycle
      *----------------------------------------------------*/
-    override fun getLayoutId(): Int = R.layout.activity_posting
+    override fun getLayoutId(): Int = R.layout.activity_posting_write
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

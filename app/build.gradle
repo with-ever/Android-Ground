@@ -56,4 +56,5 @@ dependencies {
 
     kapt "com.android.databinding:compiler:$android_plugin_version"
     implementation 'com.github.qiujayen:sticky-layoutmanager:1.0.1'
+    implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:2.1.0'
 }

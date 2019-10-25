@@ -79,6 +79,12 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/black</item>
     </style>
+
+    <style name="TextNaviation">
+        <item name="android:textSize">@dimen/text_10</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

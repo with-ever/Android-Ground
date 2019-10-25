@@ -21,71 +21,74 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/constraintRowBoardCellParent"
                         android:layout_width="match_parent"
-                        android:layout_height="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
                         android:background="#FFFFFF"
+                        android:onClick="@{() -> postingListViewHolder.onClickPostingListCell(simplePostingData)}"
                         android:orientation="vertical"
-                        android:clickable="true"
-                        android:onClick="@{() -> postingListViewHolder.onClickPostingListCell(simplePostingData)}">
+                        android:padding="18dp"
+                        app:layout_constraintEnd_toStartOf="@+id/layout_dot"
+                        app:layout_constraintStart_toStartOf="@+id/layout_dot">
 
                         <com.withever.blind.widget.TTextView
                                 android:id="@+id/textBoardCellTitle"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:layout_marginTop="12dp"
                                 android:text="@{simplePostingData.title}"
                                 android:textColor="#000000"
                                 android:textSize="20sp"
                                 android:textStyle="bold"
-                                tools:text="스타트업 이직"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:text="스타트업 이직" />
 
                         <com.withever.blind.widget.TTextView
                                 android:id="@+id/textBoardCellCompany"
+                                style="@style/TextSmall"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:layout_marginTop="5dp"
                                 android:text="@{simplePostingData.companyName}"
                                 android:textColor="#000000"
-                                android:textStyle="bold"
-                                tools:text="회사명"
-                                app:layout_constraintEnd_toStartOf="@id/imageSection01"
-                                app:layout_constraintHorizontal_bias="0.64"
+                                app:layout_constraintBottom_toTopOf="@id/textBoardCellContens"
+                                app:layout_constraintEnd_toStartOf="@id/layoutSection"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintHorizontal_chainStyle="packed"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/textBoardCellTitle"
-                                />
+                                app:layout_constraintVertical_bias="0.3"
+                                tools:text="회사명" />
 
-                        <com.withever.blind.widget.TImageView
-                                android:id="@+id/imageSection01"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/layoutSection"
+                                android:layout_width="1dp"
+                                android:layout_height="8dp"
                                 android:layout_marginStart="8dp"
+                                android:background="#FFE1E1E1"
+                                app:layout_constraintBottom_toTopOf="@+id/textBoardCellContens"
                                 app:layout_constraintEnd_toStartOf="@+id/textBoardCellNickName"
                                 app:layout_constraintStart_toEndOf="@id/textBoardCellCompany"
                                 app:layout_constraintTop_toBottomOf="@+id/textBoardCellTitle"
-                                app:srcCompat="@android:drawable/dark_header" />
+                                app:layout_constraintVertical_bias="0.38" />
 
                         <com.withever.blind.widget.TTextView
                                 android:id="@+id/textBoardCellNickName"
-                                android:layout_width="0dp"
+                                style="@style/TextSmall"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
-                                android:layout_marginTop="5dp"
                                 android:text="@{simplePostingData.userNickName}"
                                 android:textColor="#FF9800"
-                                android:textStyle="bold"
-                                tools:text="닉네임"
-                                app:layout_constraintStart_toEndOf="@id/imageSection01"
-                                app:layout_constraintTop_toBottomOf="@id/textBoardCellTitle" />
+                                app:layout_constraintBottom_toTopOf="@id/textBoardCellContens"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/layoutSection"
+                                app:layout_constraintTop_toBottomOf="@+id/textBoardCellTitle"
+                                app:layout_constraintVertical_bias="0.3"
+                                tools:text="닉네임" />
 
                         <com.withever.blind.widget.TImageView
                                 android:id="@+id/imageView2"
                                 android:layout_width="93dp"
                                 android:layout_height="93dp"
-                                android:layout_marginTop="12dp"
-                                android:layout_marginEnd="14dp"
                                 android:scaleType="fitCenter"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
@@ -96,66 +99,88 @@
                                 android:id="@+id/textBoardCellContens"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:layout_marginTop="8dp"
+                                android:layout_marginTop="32dp"
                                 android:layout_marginEnd="10dp"
-                                app:textWithMaximumLine='@{simplePostingData.contents}'
-                                app:text_more="@string/home_more_view_text"
                                 app:collapseLine="1"
                                 app:color_text_more="@color/gray_dark"
                                 app:layout_constraintEnd_toStartOf="@id/imageView2"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@id/textBoardCellCompany" />
+                                app:layout_constraintTop_toBottomOf="@id/textBoardCellTitle"
+                                app:textWithMaximumLine='@{simplePostingData.contents}'
+                                app:text_more="@string/home_more_view_text" />
 
                         <com.withever.blind.widget.TImageView
                                 android:id="@+id/imageViewRead"
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:layout_marginStart="14dp"
-                                android:layout_marginTop="8dp"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_marginTop="12dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/textBoardCellWatchCount"
+                                app:layout_constraintHorizontal_bias="0.0"
                                 app:layout_constraintHorizontal_chainStyle="packed"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@id/textBoardCellContens"
-                                app:srcCompat="@drawable/temp_views" />
+                                app:layout_constraintTop_toBottomOf="@+id/textBoardCellContens"
+                                app:srcCompat="@drawable/ic_view" />
 
                         <com.withever.blind.widget.TTextView
                                 android:id="@+id/textBoardCellWatchCount"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="2dp"
-                                android:layout_marginTop="11dp"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginTop="12dp"
                                 android:text="@{String.valueOf(simplePostingData.viewCount)}"
-                                android:textSize="10sp"
-                                tools:text="1125"
-                                app:layout_constraintHorizontal_chainStyle="packed"
-                                app:layout_constraintStart_toEndOf="@id/imageViewRead"
-                                app:layout_constraintTop_toBottomOf="@id/textBoardCellContens" />
+                                android:textSize="12sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/layout_dot"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toEndOf="@+id/imageViewRead"
+                                app:layout_constraintTop_toBottomOf="@+id/textBoardCellContens"
+                                tools:text="1125" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/layout_dot"
+                                android:layout_width="1dp"
+                                android:layout_height="1dp"
+                                android:layout_marginStart="6dp"
+                                android:layout_marginTop="12dp"
+                                android:layout_marginEnd="6dp"
+                                android:background="@drawable/ic_middle_dot"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/imageViewTime"
+                                app:layout_constraintHorizontal_bias="0.56"
+                                app:layout_constraintStart_toEndOf="@id/textBoardCellWatchCount"
+                                app:layout_constraintTop_toBottomOf="@id/textBoardCellContens">
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <com.withever.blind.widget.TImageView
                                 android:id="@+id/imageViewTime"
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginTop="8dp"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_marginTop="12dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toStartOf="@id/textBoardCellCreateTime"
-                                app:layout_constraintStart_toEndOf="@id/textBoardCellWatchCount"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/layout_dot"
                                 app:layout_constraintTop_toBottomOf="@+id/textBoardCellContens"
-                                app:srcCompat="@drawable/temp_time" />
+                                app:srcCompat="@drawable/ic_watch" />
 
                         <com.withever.blind.widget.TTextView
                                 android:id="@+id/textBoardCellCreateTime"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="2dp"
-                                android:layout_marginTop="11dp"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginTop="12dp"
                                 android:text='@{simplePostingData.writeTime + "before"}'
-                                android:textSize="10sp"
-                                tools:text="6시간"
-                                app:layout_constraintHorizontal_chainStyle="packed"
-                                app:layout_constraintStart_toEndOf="@id/imageViewTime"
-                                app:layout_constraintTop_toBottomOf="@+id/textBoardCellContens" />
+                                android:textSize="12sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/imageViewTime"
+                                app:layout_constraintTop_toBottomOf="@+id/textBoardCellContens"
+                                tools:text="6시간" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <include layout="@layout/layout_board_cell_bottom_buttons"/>
+                <include layout="@layout/layout_board_cell_bottom_buttons" />
         </LinearLayout>
 </layout>

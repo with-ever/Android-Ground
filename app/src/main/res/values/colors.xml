@@ -25,7 +25,7 @@
     <color name="gray_dark">@color/color_333333</color>
 
     <!--common-->
-    <color name="divider">#ABABAB</color>
+    <color name="divider">#E8E8E8</color>
 
     <!--color-->
     <color name="color_878787">#878787</color>

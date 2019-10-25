@@ -7,7 +7,7 @@ import com.withever.blind.databinding.RowBoardCellBinding
 import com.withever.blind.extension.start
 import com.withever.blind.ui.data.PostingSimpleData
 import com.withever.blind.ui.interfaces.IPostingListCellCallback
-import com.withever.blind.ui.posting.PostingActivity
+import com.withever.blind.ui.posting.PostingWriteActivity
 
 class PostListRecyclerViewHolder(binding: RowBoardCellBinding) : BaseViewHolder<PostingSimpleData>(binding.root)
                                                                , IPostingListCellCallback {
@@ -34,6 +34,6 @@ class PostListRecyclerViewHolder(binding: RowBoardCellBinding) : BaseViewHolder<
     override fun onClickPostingListCell(postingData: PostingSimpleData) {
         val data = Bundle()
         data.putParcelable("postingSimpleData", postingData)
-        context.start<PostingActivity>(data)
+        context.start<PostingWriteActivity>(data)
     }
 }

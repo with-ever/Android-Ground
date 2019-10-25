@@ -9,9 +9,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.viewpager.widget.PagerAdapter
 import com.withever.blind.R
 import com.withever.blind.databinding.LayoutCategoryPageBinding
-import com.withever.blind.ui.posting.PostingActivity
+import com.withever.blind.ui.posting.PostingWriteActivity
 
-class CategoryPagerAdapter : PagerAdapter {
+class LoungeCategoryPagerAdapter : PagerAdapter {
     val context: Context
 
     constructor(context: Context) : super(){
@@ -34,7 +34,7 @@ class CategoryPagerAdapter : PagerAdapter {
             false
         )
 
-        binding.categoryName = container.resources.getString(PostingActivity.PostingCategory.values()[position % 6].descriptionID)
+        binding.categoryName = container.resources.getString(PostingWriteActivity.PostingCategory.values()[position % 6].descriptionID)
         container.addView(binding.root)
         return binding.root
     }

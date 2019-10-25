@@ -12,88 +12,89 @@
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="1dp"
-            android:orientation="horizontal"
-            android:baselineAligned="false">
+            android:baselineAligned="false"
+            android:orientation="horizontal">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintBoardCellBottomBottonsParent"
+                android:id="@+id/community"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_weight="2"
+                android:layout_weight="3"
                 android:background="#FFFFFF"
                 app:layout_constraintEnd_toEndOf="@+id/textCommentsCount"
                 app:layout_constraintStart_toEndOf="@+id/textCommentsCount">
 
             <com.withever.blind.widget.TImageView
                     android:id="@+id/imageThumbsUp"
-                    android:layout_width="26dp"
-                    android:layout_height="0dp"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginStart="16dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/textThumbsUpCount"
-                    app:layout_constraintHorizontal_bias="0.1"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintHorizontal_chainStyle="packed"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/temp_like_selected"/>
+                    app:srcCompat="@drawable/ic_posting_list_like" />
 
             <com.withever.blind.widget.TTextView
                     android:id="@+id/textThumbsUpCount"
                     android:layout_width="38dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
                     android:text='@{String.valueOf(postingAttributeData.likeCount)}'
+                    android:textAlignment="textStart"
                     android:textSize="14sp"
-                    android:textStyle="bold"
-                    tools:text="206"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/imageSection01"
-                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintEnd_toStartOf="@id/section_01"
                     app:layout_constraintStart_toEndOf="@id/imageThumbsUp"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="206" />
 
-            <com.withever.blind.widget.TImageView
-                    android:id="@+id/imageSection01"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/section_01"
+                    android:layout_width="2dp"
+                    android:layout_height="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="18dp"
+                    android:background="@color/gray_middle"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/imageComment"
                     app:layout_constraintStart_toEndOf="@+id/textThumbsUpCount"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@android:drawable/dark_header" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
             <com.withever.blind.widget.TImageView
                     android:id="@+id/imageComment"
-                    android:layout_width="26dp"
-                    android:layout_height="0dp"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginTop="4dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/textCommentsCount"
-                    app:layout_constraintHorizontal_chainStyle="packed"
-                    app:layout_constraintStart_toEndOf="@id/imageSection01"
+                    app:layout_constraintStart_toEndOf="@id/section_01"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/temp_comment" />
+                    app:srcCompat="@drawable/ic_posting_list_comment" />
 
             <com.withever.blind.widget.TTextView
                     android:id="@+id/textCommentsCount"
                     android:layout_width="38dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
                     android:text='@{String.valueOf(postingAttributeData.commentCount)}'
+                    android:textAlignment="textStart"
                     android:textSize="14sp"
-                    android:textStyle="bold"
-                    tools:text="550"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/imageSection02"
-                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintEnd_toStartOf="@id/section_02"
                     app:layout_constraintStart_toEndOf="@+id/imageComment"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="550" />
 
-            <com.withever.blind.widget.TImageView
-                    android:id="@+id/imageSection02"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/section_02"
+                    android:layout_width="2dp"
+                    android:layout_height="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="18dp"
+                    android:background="@color/gray_middle"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/imageShared"
                     app:layout_constraintStart_toEndOf="@+id/textCommentsCount"
@@ -102,28 +103,28 @@
 
             <com.withever.blind.widget.TImageView
                     android:id="@+id/imageShared"
-                    android:layout_width="26dp"
-                    android:layout_height="0dp"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/textSharedCount"
-                    app:layout_constraintHorizontal_chainStyle="packed"
-                    app:layout_constraintStart_toEndOf="@id/imageSection02"
+                    app:layout_constraintStart_toEndOf="@id/section_02"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/temp_share" />
+                    app:srcCompat="@drawable/ic_posting_list_shared" />
 
             <com.withever.blind.widget.TTextView
                     android:id="@+id/textSharedCount"
                     android:layout_width="38dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
                     android:text='@{String.valueOf(postingAttributeData.sharedCount)}'
+                    android:textAlignment="textStart"
                     android:textSize="14sp"
-                    android:textStyle="bold"
-                    tools:text="200"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_chainStyle="packed"
                     app:layout_constraintStart_toEndOf="@id/imageShared"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="200" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -134,13 +135,16 @@
                 android:layout_weight="9"
                 android:background="#FFFFFF"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                tools:visibility="visible">
 
             <com.withever.blind.widget.TImageView
                     android:id="@+id/imageBookmark"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    app:srcCompat="@drawable/temp_bookmark_selected" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleX="0.5"
+                    android:scaleY="0.5"
+                    app:srcCompat="@drawable/ic_posting_list_bookmark" />
         </LinearLayout>
     </LinearLayout>
 </layout>
