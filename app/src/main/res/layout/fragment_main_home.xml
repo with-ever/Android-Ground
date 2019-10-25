@@ -21,7 +21,7 @@
         <androidx.viewpager.widget.ViewPager
                 android:id="@+id/pagerCategory"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="200dp"
                 android:foregroundGravity="center"
                 app:layout_constraintBottom_toTopOf="@id/imageBanner"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -33,13 +33,14 @@
                 android:layout_width="0dp"
                 android:layout_height="120dp"
                 android:scaleType="fitXY"
+                android:visibility="gone"
                 app:layout_constraintBottom_toTopOf="@+id/layoutSorting"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/pagerCategory"
                 app:srcCompat="@drawable/temp_main_banner"
-                tools:srcCompat="@drawable/temp_main_banner"
-                tools:ignore="contentDescription"/>
+                tools:ignore="contentDescription"
+                tools:srcCompat="@drawable/temp_main_banner" />
 
         <RelativeLayout
                 android:id="@+id/layoutSorting"
@@ -47,6 +48,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="4dp"
                 android:background="#FFFFFF"
+                android:visibility="gone"
                 app:layout_constraintBottom_toTopOf="@id/homeRecyclerView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -71,7 +73,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginEnd="20dp"
                     app:srcCompat="@drawable/temp_main_filter"
-                    tools:ignore="contentDescription"/>
+                    tools:ignore="contentDescription" />
 
         </RelativeLayout>
 
@@ -83,7 +85,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/layoutSorting"/>
+                app:layout_constraintTop_toBottomOf="@id/layoutSorting" />
 
         <!--    <com.withever.blind.ui.common.CommonPostingCell-->
         <!--            android:layout_width="match_parent"-->
