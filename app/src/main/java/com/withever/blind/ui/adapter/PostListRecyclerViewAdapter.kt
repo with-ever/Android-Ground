@@ -13,9 +13,6 @@ import com.withever.blind.ui.viewholder.PostListRecyclerViewHolder
 import com.withever.blind.ui.viewholder.SortingFilterViewHolder
 
 class PostListRecyclerviewAdapter : BaseRecyclerViewAdapter(), StickyHeaders {
-    override fun getItemCount(): Int {
-        return 14
-    }
 
     override fun onAbstractCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
 
@@ -58,6 +55,11 @@ class PostListRecyclerviewAdapter : BaseRecyclerViewAdapter(), StickyHeaders {
     override fun isStickyHeader(position: Int): Boolean {
         if(position >= getRealItemCount()) return false
 
-        return (getAllItem()[position].viewType == 0)
+        when(getAllItem()[position].viewType){
+            ListViewItemType.ViewTypeImageBanner.id -> return true
+            ListViewItemType.ViewTypeSortingFilter.id -> return true
+        }
+
+        return false
     }
 }
