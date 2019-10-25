@@ -7,29 +7,59 @@ import com.jay.widget.StickyHeaders
 import com.withever.blind.R
 import com.withever.blind.base.recyclerview.BaseRecyclerViewAdapter
 import com.withever.blind.base.recyclerview.BaseViewHolder
-import com.withever.blind.databinding.RowBoardCellBinding
-import com.withever.blind.ui.data.PostingSimpleData
+import com.withever.blind.base.recyclerview.ListViewItemType
+import com.withever.blind.ui.viewholder.ImageBannerViewHolder
 import com.withever.blind.ui.viewholder.PostListRecyclerViewHolder
+import com.withever.blind.ui.viewholder.SortingFilterViewHolder
 
 class PostListRecyclerviewAdapter : BaseRecyclerViewAdapter(), StickyHeaders {
-    override fun getItemCount(): Int {
-        return 14
-    }
 
-    override fun onAbstractCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<PostingSimpleData> {
-        val binding: RowBoardCellBinding = DataBindingUtil.inflate(
-            LayoutInflater.from(parent.context),
-            R.layout.row_board_cell,
-            parent,
-            false
-        )
+    override fun onAbstractCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
 
-        return PostListRecyclerViewHolder(binding)
+        when(viewType){
+            ListViewItemType.ViewTypeImageBanner.id ->
+
+            return ImageBannerViewHolder(
+                DataBindingUtil.inflate(
+                    LayoutInflater.from(parent.context),
+                    R.layout.layout_image_banner,
+                    parent,
+                    false
+                )
+            )
+
+            ListViewItemType.ViewTypeSortingFilter.id ->
+            return SortingFilterViewHolder(
+                DataBindingUtil.inflate(
+                    LayoutInflater.from(parent.context),
+                    R.layout.layout_sorting_filter,
+                    parent,
+                    false
+                )
+            )
+
+
+            else ->
+            return PostListRecyclerViewHolder(
+                DataBindingUtil.inflate(
+                    LayoutInflater.from(parent.context),
+                    R.layout.row_board_cell,
+                    parent,
+                    false
+                )
+            )
+        }
+
     }
 
     override fun isStickyHeader(position: Int): Boolean {
         if(position >= getRealItemCount()) return false
 
-        return (getAllItem()[position].viewType == 0)
+        when(getAllItem()[position].viewType){
+            ListViewItemType.ViewTypeImageBanner.id -> return true
+            ListViewItemType.ViewTypeSortingFilter.id -> return true
+        }
+
+        return false
     }
 }

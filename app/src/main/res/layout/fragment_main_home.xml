@@ -13,107 +13,59 @@
                 type="ArrayList&lt;Item&lt;PostingSimpleData&gt;&gt;" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/pagerWrappe2r"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#E0E0E0">
 
-        <androidx.viewpager.widget.ViewPager
-                android:id="@+id/pagerCategory"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginTop="4dp"
-                android:background="#FFFFFF"
-                android:foregroundGravity="center"
-                app:layout_constraintBottom_toTopOf="@id/pagerCategoryDot"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-        </androidx.viewpager.widget.ViewPager>
-
-        <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
-                android:id="@+id/pagerCategoryDot"
+        <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/pagerWrapper"
                 android:layout_width="match_parent"
-                android:layout_height="28dp"
+                android:layout_height="wrap_content"
                 android:background="#FFFFFF"
-                android:gravity="center"
-                android:paddingBottom="14dp"
-                app:dotsColor="@color/color_tab_selected"
-                app:dotsCornerRadius="8dp"
-                app:dotsSize="6dp"
-                app:dotsSpacing="2dp"
-                app:dotsWidthFactor="2.5"
-                app:layout_constraintBottom_toTopOf="@id/imageBanner"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/pagerCategory"/>
+                android:theme="@style/AppTheme.AppBarOverlay">
 
-        <com.withever.blind.widget.TImageView
-                android:id="@+id/imageBanner"
-                android:layout_width="fill_parent"
-                android:layout_height="110dp"
-                android:layout_marginTop="4dp"
-                android:scaleType="fitXY"
-                app:layout_constraintBottom_toTopOf="@+id/layoutSorting"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/pagerCategoryDot"
-                app:srcCompat="@drawable/temp_main_banner"
-                tools:ignore="contentDescription"
-                tools:srcCompat="@drawable/temp_main_banner" />
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="228dp"
+                    app:contentScrim="@color/white"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-        <RelativeLayout
-                android:id="@+id/layoutSorting"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="4dp"
-                android:background="#FFFFFF"
-                app:layout_constraintBottom_toTopOf="@id/homeRecyclerView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/imageBanner">
+                <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/pagerCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:foregroundGravity="center" />
 
-            <com.withever.blind.widget.TTextView
-                    android:id="@+id/textSorting"
-                    style="@style/TextSmall.Bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="19dp"
-                    android:text="@string/home_sort_popular"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
+                <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                        android:id="@+id/pagerCategoryDot"
+                        android:layout_width="match_parent"
+                        android:layout_height="28dp"
+                        android:layout_gravity="bottom"
+                        android:background="#FFFFFF"
+                        android:gravity="center"
+                        app:dotsColor="@color/color_tab_selected"
+                        app:dotsCornerRadius="8dp"
+                        app:dotsSize="6dp"
+                        app:dotsSpacing="2dp"
+                        app:dotsWidthFactor="2.5" />
 
-            <com.withever.blind.widget.TImageView
-                    android:id="@+id/imgSorting"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="20dp"
-                    app:srcCompat="@drawable/ic_filter"
-                    tools:ignore="contentDescription" />
+                <androidx.appcompat.widget.Toolbar
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        app:layout_collapseMode="pin"
+                        app:popupTheme="@style/AppTheme.PopupOverlay"></androidx.appcompat.widget.Toolbar>
 
-        </RelativeLayout>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/homeRecyclerView"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginTop="2dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/layoutSorting"/>
-
-        <!--    <com.withever.blind.ui.common.CommonPostingCell-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintTop_toBottomOf="@id/asdasd" android:id="@+id/ddddddddd"/>-->
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
