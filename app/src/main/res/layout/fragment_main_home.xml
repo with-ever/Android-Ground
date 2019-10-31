@@ -28,27 +28,30 @@
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
                     android:layout_width="match_parent"
-                    android:layout_height="228dp"
+                    android:layout_height="206dp"
                     app:contentScrim="@color/white"
                     app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-                <androidx.viewpager.widget.ViewPager
+                <com.withever.blind.base.BaseViewPager
                         android:id="@+id/pagerCategory"
                         android:layout_width="match_parent"
-                        android:layout_height="200dp"
+                        android:layout_height="178dp"
+                        android:layout_marginTop="8dp"
                         android:foregroundGravity="center" />
 
                 <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
                         android:id="@+id/pagerCategoryDot"
                         android:layout_width="match_parent"
-                        android:layout_height="28dp"
+                        android:layout_height="20dp"
                         android:layout_gravity="bottom"
+                        android:layout_marginBottom="8dp"
                         android:background="#FFFFFF"
-                        android:gravity="center"
+                        android:gravity="center_horizontal|top"
+                        android:visibility="visible"
                         app:dotsColor="@color/color_tab_selected"
-                        app:dotsCornerRadius="8dp"
-                        app:dotsSize="6dp"
-                        app:dotsSpacing="2dp"
+                        app:dotsCornerRadius="4dp"
+                        app:dotsSize="4dp"
+                        app:dotsSpacing="1dp"
                         app:dotsWidthFactor="2.5" />
 
                 <androidx.appcompat.widget.Toolbar

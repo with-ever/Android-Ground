@@ -11,11 +11,12 @@ import com.withever.blind.R
 import com.withever.blind.databinding.LayoutCategoryPageBinding
 import com.withever.blind.ui.posting.PostingWriteActivity
 
-class LoungeCategoryPagerAdapter : PagerAdapter {
-    val context: Context
+class LoungeCategoryPagerAdapter() : PagerAdapter() {
+    var context: Context? = null
+    var itemWidth: Int = 0
 
-    constructor(context: Context) : super(){
-        this.context = context
+    constructor(context_: Context?) : this(){
+        context = context_
     }
 
     override fun getCount(): Int {
@@ -36,6 +37,7 @@ class LoungeCategoryPagerAdapter : PagerAdapter {
 
         binding.categoryName = container.resources.getString(PostingWriteActivity.PostingCategory.values()[position % 6].descriptionID)
         container.addView(binding.root)
+
         return binding.root
     }
 

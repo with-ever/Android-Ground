@@ -24,7 +24,6 @@ class MainHomeFragment : BaseFragment<FragmentMainHomeBinding>() {
     override fun createView(viewGroup: ViewGroup?) {
     }
 
-
     /**----------------------------------------------------
      * Life Cycle
      *----------------------------------------------------*/
@@ -47,12 +46,8 @@ class MainHomeFragment : BaseFragment<FragmentMainHomeBinding>() {
     }
 
     private fun initCategoryViewPager(){
-        val margin = 160 * resources.displayMetrics.density.toInt()
-
         binding?.pagerCategory?.clipToPadding = false
-        binding?.pagerCategory?.setPadding(margin, 0, margin, 0)
-        binding?.pagerCategory?.adapter = LoungeCategoryPagerAdapter(binding?.root!!.context)
-
+        binding?.pagerCategory?.adapter = LoungeCategoryPagerAdapter()
         binding?.pagerCategoryDot?.setViewPager(binding?.pagerCategory)
     }
 
