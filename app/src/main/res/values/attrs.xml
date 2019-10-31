@@ -24,11 +24,16 @@
         </attr>
     </declare-styleable>
 
-    <!--TextView-->
+    <!--TTextView-->
     <declare-styleable name="TTextView">
         <attr name="text_more" format="string"/>
         <attr name="collapseLine" format="integer"/>
         <attr name="color_text_more" format="color"/>
+    </declare-styleable>
+
+    <!--BaseViewPager-->
+    <declare-styleable name="BaseViewPager">
+        <attr name="matchWidthTargetChild" format="reference"/>
     </declare-styleable>
 
 </resources>

@@ -37,7 +37,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="178dp"
                         android:layout_marginTop="8dp"
-                        android:foregroundGravity="center" />
+                        android:foregroundGravity="center"
+                        app:matchWidthTargetChild="@+id/imageCategoryIcon" />
 
                 <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
                         android:id="@+id/pagerCategoryDot"
@@ -58,7 +59,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="?attr/actionBarSize"
                         app:layout_collapseMode="pin"
-                        app:popupTheme="@style/AppTheme.PopupOverlay"></androidx.appcompat.widget.Toolbar>
+                        app:popupTheme="@style/AppTheme.PopupOverlay"/>
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 
