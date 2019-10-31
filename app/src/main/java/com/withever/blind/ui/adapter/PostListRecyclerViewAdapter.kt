@@ -1,8 +1,6 @@
 package com.withever.blind.ui.adapter
 
-import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import com.jay.widget.StickyHeaders
 import com.withever.blind.R
 import com.withever.blind.base.recyclerview.BaseRecyclerViewAdapter
@@ -17,37 +15,14 @@ class PostListRecyclerviewAdapter : BaseRecyclerViewAdapter(), StickyHeaders {
     override fun onAbstractCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
 
         when(viewType){
-            ListViewItemType.ViewTypeImageBanner.id ->
+            ListViewItemType.ViewTypeHomeImageBanner.id ->
+                return ImageBannerViewHolder(bindingInflate(parent, R.layout.layout_image_banner))
 
-            return ImageBannerViewHolder(
-                DataBindingUtil.inflate(
-                    LayoutInflater.from(parent.context),
-                    R.layout.layout_image_banner,
-                    parent,
-                    false
-                )
-            )
-
-            ListViewItemType.ViewTypeSortingFilter.id ->
-            return SortingFilterViewHolder(
-                DataBindingUtil.inflate(
-                    LayoutInflater.from(parent.context),
-                    R.layout.layout_sorting_filter,
-                    parent,
-                    false
-                )
-            )
-
+            ListViewItemType.ViewTypeCommonSortingFilter.id ->
+                return SortingFilterViewHolder(bindingInflate(parent, R.layout.layout_sorting_filter))
 
             else ->
-            return PostListRecyclerViewHolder(
-                DataBindingUtil.inflate(
-                    LayoutInflater.from(parent.context),
-                    R.layout.row_board_cell,
-                    parent,
-                    false
-                )
-            )
+                return PostListRecyclerViewHolder(bindingInflate(parent, R.layout.row_board_cell))
         }
 
     }
@@ -56,8 +31,8 @@ class PostListRecyclerviewAdapter : BaseRecyclerViewAdapter(), StickyHeaders {
         if(position >= getRealItemCount()) return false
 
         when(getAllItem()[position].viewType){
-            ListViewItemType.ViewTypeImageBanner.id -> return true
-            ListViewItemType.ViewTypeSortingFilter.id -> return true
+            ListViewItemType.ViewTypeHomeImageBanner.id -> return true
+            ListViewItemType.ViewTypeCommonSortingFilter.id -> return true
         }
 
         return false

@@ -15,7 +15,7 @@ class PostingDetailRecyclerViewAdapter : BaseRecyclerViewAdapter(), StickyHeader
 
         when(viewType){
             ListViewItemType.ViewTypePostingDetailTitle.id ->
-                return PostingTitleViewHolder( bindingInflate(parent, R.layout.layout_sorting_filter))
+                return PostingTitleViewHolder( bindingInflate(parent, R.layout.layout_posting_title))
 
             ListViewItemType.ViewTypePostingDetailText.id ->
                 return SortingFilterViewHolder( bindingInflate(parent, R.layout.layout_sorting_filter))
