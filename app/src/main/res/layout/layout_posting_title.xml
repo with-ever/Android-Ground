@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginBottom="1dp"
+            android:background="#FFFFFF">
+
+        <TextView
+                android:id="@+id/textTitle"
+                style="@style/TextBig.Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:text=""
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="스타트업 이직" />
+
+        <TextView
+                android:id="@+id/textCompanyName"
+                style="@style/TextSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginBottom="16dp"
+                android:text=""
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textTitle"
+                tools:text="회사명" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="1dp"
+                android:layout_height="10dp"
+                android:layout_marginBottom="16dp"
+                android:background="#E0E0E0"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/textNickName"
+                app:layout_constraintStart_toEndOf="@id/textCompanyName"
+                app:layout_constraintTop_toBottomOf="@id/textTitle">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+                android:id="@+id/textNickName"
+                style="@style/TextSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="16dp"
+                android:text=""
+                android:textColor="#FF9800"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/textCompanyName"
+                app:layout_constraintTop_toBottomOf="@id/textTitle"
+                tools:text="닉네임" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

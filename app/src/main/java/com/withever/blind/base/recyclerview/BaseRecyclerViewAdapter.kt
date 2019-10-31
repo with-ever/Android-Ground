@@ -3,6 +3,8 @@ package com.withever.blind.base.recyclerview
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.withever.blind.R
 
@@ -114,6 +116,14 @@ abstract class BaseRecyclerViewAdapter : RecyclerView.Adapter<BaseViewHolder<*>>
             return TYPE_LOADING_FOOTER
         }
         else itemList[position].viewType
+    }
+
+    fun <T :ViewDataBinding>bindingInflate(viewGroup :ViewGroup, layoutId: Int, attachToParent: Boolean = false) : T {
+        return DataBindingUtil.inflate(
+            LayoutInflater.from(viewGroup.context),
+            layoutId,
+            viewGroup,
+            attachToParent)
     }
 
     /**----------------------------------------------------

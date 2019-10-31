@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/viewInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:background="#FFFFFF"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp">
+
+            <com.withever.blind.widget.TImageView
+                    android:id="@+id/imageViewRead"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textBoardCellWatchCount"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_view" />
+
+            <com.withever.blind.widget.TTextView
+                    android:id="@+id/textBoardCellWatchCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text=""
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/layout_dot"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewRead"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="1125" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_dot"
+                    android:layout_width="1dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="6dp"
+                    android:background="@drawable/ic_middle_dot"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/imageViewTime"
+                    app:layout_constraintStart_toEndOf="@id/textBoardCellWatchCount"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            <com.withever.blind.widget.TImageView
+                    android:id="@+id/imageViewTime"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/textBoardCellCreateTime"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/layout_dot"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_watch" />
+
+            <com.withever.blind.widget.TTextView
+                    android:id="@+id/textBoardCellCreateTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text=""
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewTime"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="6시간" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/community"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:background="#FFFFFF"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                app:layout_constraintBottom_toTopOf="@id/layoutSorting"
+                app:layout_constraintStart_toEndOf="@+id/textCommentsCount"
+                app:layout_constraintTop_toBottomOf="@+id/viewInfo">
+
+            <com.withever.blind.widget.TImageView
+                    android:id="@+id/imageThumbsUp"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="32dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/textThumbsUpCount"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_posting_list_like" />
+
+            <com.withever.blind.widget.TTextView
+                    android:id="@+id/textThumbsUpCount"
+                    android:layout_width="38dp"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textAlignment="textStart"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/section_01"
+                    app:layout_constraintStart_toEndOf="@id/imageThumbsUp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="206" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/section_01"
+                    android:layout_width="2dp"
+                    android:layout_height="14dp"
+                    android:background="@color/gray_middle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageComment"
+                    app:layout_constraintStart_toEndOf="@+id/textThumbsUpCount"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            <com.withever.blind.widget.TImageView
+                    android:id="@+id/imageComment"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginTop="4dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textCommentsCount"
+                    app:layout_constraintStart_toEndOf="@id/section_01"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_posting_list_comment" />
+
+            <com.withever.blind.widget.TTextView
+                    android:id="@+id/textCommentsCount"
+                    android:layout_width="38dp"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textAlignment="textStart"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/section_02"
+                    app:layout_constraintStart_toEndOf="@+id/imageComment"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="550" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/section_02"
+                    android:layout_width="2dp"
+                    android:layout_height="14dp"
+                    android:background="@color/gray_middle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageShared"
+                    app:layout_constraintStart_toEndOf="@+id/textCommentsCount"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@android:drawable/dark_header" />
+
+            <com.withever.blind.widget.TImageView
+                    android:id="@+id/imageShared"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/textSharedCount"
+                    app:layout_constraintStart_toEndOf="@id/section_02"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_posting_list_shared" />
+
+            <com.withever.blind.widget.TTextView
+                    android:id="@+id/textSharedCount"
+                    android:layout_width="38dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="32dp"
+                    android:text=""
+                    android:textAlignment="textStart"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toEndOf="@id/imageShared"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="200" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</layout>
