@@ -1,11 +1,13 @@
 package com.withever.blind.ui.posting
 
 import android.os.Bundle
+import com.jay.widget.StickyHeadersLinearLayoutManager
 import com.withever.blind.R
 import com.withever.blind.base.BaseActivity
 import com.withever.blind.base.recyclerview.Item
 import com.withever.blind.base.recyclerview.ListViewItemType
 import com.withever.blind.databinding.ActivityPostingDetailBinding
+import com.withever.blind.ui.adapter.PostListRecyclerviewAdapter
 import com.withever.blind.ui.adapter.PostingDetailRecyclerViewAdapter
 import com.withever.blind.ui.data.PostingSimpleData
 import kotlinx.android.synthetic.main.activity_main.*
@@ -35,10 +37,11 @@ class PostingDetailActivity : BaseActivity<ActivityPostingDetailBinding>() {
      * Initialize
      *----------------------------------------------------*/
     override fun initLayout() {
-        adapter = binding?.recyclerView?.adapter as PostingDetailRecyclerViewAdapter
+
         initRecyclerView()
         initPostingTitle()
-        initPostingInfo()
+        //initPostingInfo()
+        initPostingFilter()
 
         toolbar.addBackButtonAction {
             finish()
@@ -47,25 +50,26 @@ class PostingDetailActivity : BaseActivity<ActivityPostingDetailBinding>() {
 
     private fun initRecyclerView(){
         binding?.recyclerView?.adapter = PostingDetailRecyclerViewAdapter()
+        binding?.recyclerView?.layoutManager = StickyHeadersLinearLayoutManager<PostListRecyclerviewAdapter>(this)
+
+        adapter = binding?.recyclerView?.adapter as PostingDetailRecyclerViewAdapter
     }
 
     private fun initPostingTitle(){
-        val adapter = binding?.recyclerView?.adapter as PostingDetailRecyclerViewAdapter
         val postingTitle: Item<*> = Item(ListViewItemType.ViewTypePostingDetailTitle.id, null)
 
-        adapter.addItem(postingTitle)
+        adapter?.addItem(postingTitle)
     }
 
     private fun initPostingInfo(){
-        val adapter = binding?.recyclerView?.adapter as PostingDetailRecyclerViewAdapter
         val postingTitle: Item<*> = Item(ListViewItemType.ViewTypePostingDetailInfo.id, null)
 
-        adapter.addItem(postingTitle)
+        adapter?.addItem(postingTitle)
     }
 
     private fun initPostingFilter(){
         val adapter = binding?.recyclerView?.adapter as PostingDetailRecyclerViewAdapter
-        val postingTitle: Item<*> = Item(ListViewItemType.ViewTypePostingDetailInfo.id, null)
+        val postingTitle: Item<*> = Item(ListViewItemType.ViewTypeCommonSortingFilter.id, null)
 
         adapter.addItem(postingTitle)
     }

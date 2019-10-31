@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.res.Resources
 import android.os.Build
 import android.os.Environment
+import android.util.DisplayMetrics
 import java.io.File
 import java.util.*
 import java.util.concurrent.TimeUnit
@@ -51,6 +52,7 @@ object SystemUtils {
     fun getScreenWidth(): Int = Resources.getSystem().displayMetrics.widthPixels
     fun getScreenHeight(): Int = Resources.getSystem().displayMetrics.heightPixels
     fun getDeviceDpi(): Int = Resources.getSystem().displayMetrics.densityDpi
+    fun getDeviceDensity(): Float = Resources.getSystem().displayMetrics.density
     fun getDeviceInch(): Double {
         val dm = Resources.getSystem().displayMetrics
         val density = dm.density * 160
@@ -59,6 +61,13 @@ object SystemUtils {
         return Math.sqrt(x + y)
     }
 
+    fun convertDp2Pixel(dp: Float, context: Context) : Float{
+        return dp * (getDeviceDpi() / DisplayMetrics.DENSITY_DEFAULT)
+    }
+
+    fun convertPixel2Dp(px: Float, context: Context) : Float{
+        return px / (getDeviceDpi() / DisplayMetrics.DENSITY_DEFAULT)
+    }
 
     /**----------------------------------------------------
      * Time zone

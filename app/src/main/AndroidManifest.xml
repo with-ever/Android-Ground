@@ -25,7 +25,10 @@
             tools:ignore="GoogleAppIndexingWarning">
         <activity
                 android:name=".ui.posting.PostingWriteActivity"
-                android:theme="@style/AppTheme.NoActionBar"></activity>
+                android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+                android:name=".ui.posting.PostingDetailActivity"
+                android:theme="@style/AppTheme.NoActionBar"/>
         <activity
                 android:name=".ui.notice.NoticeActivity"
                 android:theme="@style/AppTheme.NoActionBar"></activity>

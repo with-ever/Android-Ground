@@ -1,6 +1,5 @@
 package com.withever.blind.ui.viewholder
 
-import android.os.Bundle
 import android.util.Log
 import com.withever.blind.base.recyclerview.BaseViewHolder
 import com.withever.blind.databinding.RowBoardCellBinding
@@ -32,8 +31,8 @@ class PostListRecyclerViewHolder(binding: RowBoardCellBinding) : BaseViewHolder<
      * IPostingListCellCallback interface
      *----------------------------------------------------*/
     override fun onClickPostingListCell(postingData: PostingSimpleData) {
-        val data = Bundle()
-        data.putParcelable("postingSimpleData", postingData)
-        context.start<PostingDetailActivity>(data)
+        context.start<PostingDetailActivity>{
+            putExtra("postringSimpleData", postingData)
+        }
     }
 }
